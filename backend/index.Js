@@ -1,11 +1,13 @@
-import sqlite3 from "sqlite3";
+import express from "express";
+import fichesRoutes from "./routes/fiches.js";
+import userRoutes from "./routes/users.js";
 
-const sqlite = sqlite3.verbose(); // pour détailler les erreurs
+const app = express();
+app.use(express.json());
 
-const db = new sqlite.Database("../bdd/database.sqlite", sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-        console.error("Erreur connexion BDD : ", err.message);
-    } else {
-        console.log("Connexion réussite");
-    }
+app.use("/fiches", fichesRoutes);
+app.use("/users", userRoutes);
+
+app.listen(3000, () => {
+    console.log("Serveur lancé sur 3000.");
 });

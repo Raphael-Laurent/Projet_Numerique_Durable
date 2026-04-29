@@ -11,3 +11,16 @@ Chaque branches est associée à une fonctionnalité :
 - consultation_fiches : afficher la fiche (implémenter le trucs où on cache la fiche et où on peut la révéler petit à petit)
 
 Le back-end en Node.js, la base de donnée en sqlite.
+
+## Package backend à installer (node.js installé requis) :
+sqlite 3 :
+```
+cd backend
+npm install sqlite3
+```
+
+## A mettre dans gitignore :
+```
+backend/node_modules/
+``` 
+

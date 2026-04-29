@@ -14,5 +14,4 @@ CREATE TABLE IF NOT EXISTS fiches (
 );
 
 SELECT * FROM utilisateurs;
-
 SELECT * FROM fiches;

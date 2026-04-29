@@ -17,6 +17,7 @@ sqlite 3 :
 ```
 cd backend
 npm install sqlite3
+npm install express
 ```
 
 ## A mettre dans gitignore :
@@ -24,3 +25,9 @@ npm install sqlite3
 backend/node_modules/
 ``` 
 
+
+## Pour run le serveur node :
+```
+cd backend
+npm start
+```

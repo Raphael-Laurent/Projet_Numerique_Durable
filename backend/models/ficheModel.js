@@ -32,3 +32,13 @@ export function getFicheById(id_fiche) {
         });
     });
 }
+
+export function modifierFiche(id_fiche, titre, contenu, categorie = null) {
+    return new Promise((resolve, reject) => {
+        const sql = `UPDATE fiches SET titre = ?, contenu = ?, categorie = ? WHERE id_fiche = ?`;
+        db.run(sql, [titre, contenu, categorie, id_fiche], function (err) {
+            if (err) reject(err);
+            else resolve(this.changes);
+        });
+    });
+}

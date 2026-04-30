@@ -10,6 +10,11 @@ if (!id) {
             document.getElementById("titre").textContent = fiche.titre;
             document.getElementById("categorie").textContent = fiche.categorie ?? "Sans catégorie";
 
+            const btnModifier = document.createElement("a");
+            btnModifier.href = `/modifierfiche.html?id=${id}`;
+            btnModifier.textContent = "Modifier";
+            document.querySelector("main").prepend(btnModifier);
+
             const contenuEl = document.getElementById("contenu");
             const phrases = fiche.contenu.match(/[^.!?\n]+[.!?\n]*/g) ?? [fiche.contenu];            
             phrases.forEach(phrase => {

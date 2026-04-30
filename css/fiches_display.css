@@ -14,3 +14,7 @@
     background-color: #333;
     color: white;
 }
+
+#contenu {
+    white-space: pre-wrap;
+}

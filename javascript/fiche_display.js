@@ -11,7 +11,7 @@ if (!id) {
             document.getElementById("categorie").textContent = fiche.categorie ?? "Sans catégorie";
 
             const contenuEl = document.getElementById("contenu");
-            const phrases = fiche.contenu.match(/[^.!?]+[.!?]+/g) ?? [fiche.contenu];
+            const phrases = fiche.contenu.match(/[^.!?\n]+[.!?\n]*/g) ?? [fiche.contenu];            
             phrases.forEach(phrase => {
                 const span = document.createElement("span");
                 span.classList.add("phrase");

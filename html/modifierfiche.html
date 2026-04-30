@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Modifier la fiche</title>
     <link rel="stylesheet" href="/style.css">
-    <script src="/modifierfiche.js" defer></script>
+    <script src="/style.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,15 +15,17 @@
         </nav>
     </header>
     <main>
-        <form id="form-modifier">
-            <label for="title">Titre :</label>
-            <input type="text" id="title" name="title" required>
-            <label for="categorie">Catégorie :</label>
-            <input type="text" id="categorie" name="categorie">
-            <label for="content">Contenu :</label>
-            <textarea id="content" name="content" required></textarea>
-            <button type="submit">Enregistrer</button>
-        </form>
+        <section>
+            <form id="modifier_fiche">
+                <label for="title">Titre :</label>
+                <input type="text" id="title" name="title" required>
+                <label for="categorie">Catégorie :</label>
+                <input type="text" id="category" name="categorie">
+                <label for="content">Contenu :</label>
+                <textarea id="content" name="content" required></textarea>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>

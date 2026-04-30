@@ -193,6 +193,27 @@ button {
   font-style: italic;
 }
 
+.phrase {
+    cursor: default;
+}
+
+.cachee {
+    background-color: black;
+    color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#btn-revision.actif {
+    background-color: #333;
+    color: white;
+}
+
+#contenu {
+    white-space: pre-wrap;
+}
+
 /* Pour modifierfiche.html */
 
 #modifier_fiche {

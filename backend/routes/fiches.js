@@ -1,6 +1,6 @@
 import express from "express";
 // import fonction du fichier ficheModel.js
-import { creerFiche, getFichesUtilisateur, getFicheById } from "../models/ficheModel.js";
+import { creerFiche, getFichesUtilisateur, getFicheById, modifierFiche, supprimerFiche } from "../models/ficheModel.js";
 
 const router = express.Router();
 
@@ -39,6 +39,34 @@ router.get("/:id", async (req, res) => {
         const fiche = await getFicheById(id_fiche);
         if (!fiche) return res.status(404).send("Fiche introuvable");
         res.json(fiche);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur BDD");
+    }
+});
+
+router.put("/:id", async (req, res) => {
+    const id_fiche = req.params.id;
+    const { title, content, categorie } = req.body;
+
+    if (!title || !content) {
+        return res.status(400).send("Champs manquants");
+    }
+
+    try {
+        await modifierFiche(id_fiche, title, content, categorie);
+        res.redirect(`/fiche_display.html?id=${id_fiche}`);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur BDD");
+    }
+});
+
+router.delete("/:id", async (req, res) => {
+    const id_fiche = req.params.id;
+    try {
+        await supprimerFiche(id_fiche);
+        res.sendStatus(200);
     } catch (err) {
         console.error(err);
         res.status(500).send("Erreur BDD");

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier la fiche</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/modifierfiche.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="accueil.html">Accueil</a>
+            <a href="fiches.html">Mes Fiches</a>
+            <a href="account.html">Compte</a>
+        </nav>
+    </header>
+    <main>
+        <form id="form-modifier">
+            <label for="title">Titre :</label>
+            <input type="text" id="title" name="title" required>
+            <label for="categorie">Catégorie :</label>
+            <input type="text" id="categorie" name="categorie">
+            <label for="content">Contenu :</label>
+            <textarea id="content" name="content" required></textarea>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </main>
+</body>
+</html>

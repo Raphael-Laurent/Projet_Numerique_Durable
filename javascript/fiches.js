@@ -21,3 +21,4 @@ fetch("/fiches/")
         });
     })
     .catch(err => console.error("Erreur chargement fiches :", err));
+

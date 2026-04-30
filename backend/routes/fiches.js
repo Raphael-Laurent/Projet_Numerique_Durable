@@ -1,6 +1,6 @@
 import express from "express";
 // import fonction du fichier ficheModel.js
-import { creerFiche, getFichesUtilisateur, getFicheById, modifierFiche } from "../models/ficheModel.js";
+import { creerFiche, getFichesUtilisateur, getFicheById, modifierFiche, supprimerFiche } from "../models/ficheModel.js";
 
 const router = express.Router();
 
@@ -56,6 +56,17 @@ router.put("/:id", async (req, res) => {
     try {
         await modifierFiche(id_fiche, title, content, categorie);
         res.redirect(`/fiche_display.html?id=${id_fiche}`);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur BDD");
+    }
+});
+
+router.delete("/:id", async (req, res) => {
+    const id_fiche = req.params.id;
+    try {
+        await supprimerFiche(id_fiche);
+        res.sendStatus(200);
     } catch (err) {
         console.error(err);
         res.status(500).send("Erreur BDD");

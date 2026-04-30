@@ -10,10 +10,25 @@ if (!id) {
             document.getElementById("titre").textContent = fiche.titre;
             document.getElementById("categorie").textContent = fiche.categorie ?? "Sans catégorie";
 
-            const btnModifier = document.createElement("a");
-            btnModifier.href = `/modifierfiche.html?id=${id}`;
+            const btnModifier = document.createElement("button");
             btnModifier.textContent = "Modifier";
+            btnModifier.addEventListener("click", () => {
+                window.location.href = `/modifierfiche.html?id=${id}`;
+            });
             document.querySelector("main").prepend(btnModifier);
+
+            const btnSupprimer = document.createElement("button");
+            btnSupprimer.textContent = "Supprimer";
+            btnSupprimer.addEventListener("click", () => {
+                if (confirm("Êtes-vous sûr de vouloir supprimer cette fiche ?")) {
+                    fetch(`/fiches/${id}`, { method: "DELETE" })
+                        .then(res => {
+                            if (res.ok) window.location.href = "/fiches.html";
+                        })
+                        .catch(err => console.error("Erreur :", err));
+                }
+            });
+            document.querySelector("main").prepend(btnSupprimer);
 
             const contenuEl = document.getElementById("contenu");
             const phrases = fiche.contenu.match(/[^.!?\n]+[.!?\n]*/g) ?? [fiche.contenu];            

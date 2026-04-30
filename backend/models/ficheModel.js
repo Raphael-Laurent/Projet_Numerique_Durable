@@ -42,3 +42,13 @@ export function modifierFiche(id_fiche, titre, contenu, categorie = null) {
         });
     });
 }
+
+export function supprimerFiche(id_fiche) {
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM fiches WHERE id_fiche = ?`;
+        db.run(sql, [id_fiche], function (err) {
+            if (err) reject(err);
+            else resolve(this.changes);
+        });
+    });
+}

@@ -12,7 +12,7 @@ fetch("/fiches/")
             div.innerHTML = `
                 <strong>${fiche.titre}</strong>
                 <small>${fiche.categorie ?? "Sans catégorie"}</small>
-            `;
+                `;
             div.style.cursor = "pointer";
             div.addEventListener("click", () => {
                 window.location.href = `/fiche_display.html?id=${fiche.id_fiche}`;

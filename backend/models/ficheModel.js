@@ -22,3 +22,13 @@ export function getFichesUtilisateur(id_utilisateur) {
         });
     });
 }
+
+export function getFicheById(id_fiche) {
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM fiches WHERE id_fiche = ?`;
+        db.get(sql, [id_fiche], (err, row) => {
+            if (err) reject(err);
+            else resolve(row);
+        });
+    });
+}

@@ -12,7 +12,7 @@ fetch(`/fiches/${id}`)
     });
 
 // Soumettre les modifications
-document.getElementById("form-modifier").addEventListener("submit", (e) => {
+document.getElementById("modifier_fiche").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const body = new URLSearchParams({

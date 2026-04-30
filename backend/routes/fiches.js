@@ -1,6 +1,6 @@
 import express from "express";
 // import fonction du fichier ficheModel.js
-import { creerFiche, getFichesUtilisateur } from "../models/ficheModel.js";
+import { creerFiche, getFichesUtilisateur, getFicheById } from "../models/ficheModel.js";
 
 const router = express.Router();
 
@@ -27,6 +27,18 @@ router.post("/create", async (req, res) => {
     try {
         await creerFiche(id_utilisateur, title, content, categorie);
         res.redirect("/fiches.html");
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur BDD");
+    }
+});
+
+router.get("/:id", async (req, res) => {
+    const id_fiche = req.params.id;
+    try {
+        const fiche = await getFicheById(id_fiche);
+        if (!fiche) return res.status(404).send("Fiche introuvable");
+        res.json(fiche);
     } catch (err) {
         console.error(err);
         res.status(500).send("Erreur BDD");

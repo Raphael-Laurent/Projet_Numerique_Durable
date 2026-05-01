@@ -2,25 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiche</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/fiche_display.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/javascript/authGuard.js" defer></script>
+    <script src="/javascript/fiche_display.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav>
-            <a href="accueil.html">Accueil</a>
-            <a href="fiches.html">Mes Fiches</a>
-            <a href="account.html">Compte</a>
+            <a href="/html/accueil.html">Accueil</a>
+            <a href="/html/fiches.html">Mes fiches</a>
+            <a href="/html/account.html">Compte</a>
+            <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
+
     <main>
         <button id="btn-revision">Mode révision</button>
+
         <article id="fiche">
             <h1 id="titre"></h1>
             <p id="categorie"></p>
             <p id="contenu"></p>
         </article>
     </main>
+
+    <script src="/javascript/logout.js" defer></script>
+
 </body>
 </html>

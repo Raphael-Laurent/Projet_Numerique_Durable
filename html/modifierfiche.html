@@ -2,30 +2,43 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier la fiche</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/style.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/javascript/authGuard.js" defer></script>
+    <script src="/javascript/modifierfiche.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav>
-            <a href="accueil.html">Accueil</a>
-            <a href="fiches.html">Mes Fiches</a>
-            <a href="account.html">Compte</a>
+            <a href="/html/accueil.html">Accueil</a>
+            <a href="/html/fiches.html">Mes fiches</a>
+            <a href="/html/account.html">Compte</a>
+            <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
+
     <main>
+        <h1>Modifier la fiche</h1>
+
         <section>
             <form id="modifier_fiche">
-                <label for="title">Titre :</label>
-                <input type="text" id="title" name="title" required>
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" name="titre" required>
+
                 <label for="categorie">Catégorie :</label>
-                <input type="text" id="category" name="categorie">
-                <label for="content">Contenu :</label>
-                <textarea id="content" name="content" required></textarea>
+                <input type="text" id="categorie" name="categorie">
+
+                <label for="contenu">Contenu :</label>
+                <textarea id="contenu" name="contenu" required></textarea>
+
                 <button type="submit">Enregistrer</button>
             </form>
         </section>
     </main>
+
+    <script src="/javascript/logout.js" defer></script>
+
 </body>
 </html>

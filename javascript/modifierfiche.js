@@ -6,9 +6,9 @@ fetch(`/fiches/${id}`)
     .then(res => res.json())
     .then(fiche => {
         console.log("fiche reçue :", fiche); // 👈
-        document.getElementById("title").value = fiche.titre;
+        document.getElementById("titre").value = fiche.titre;
         document.getElementById("categorie").value = fiche.categorie ?? "";
-        document.getElementById("content").value = fiche.contenu;
+        document.getElementById("contenu").value = fiche.contenu;
     });
 
 // Soumettre les modifications
@@ -16,8 +16,8 @@ document.getElementById("modifier_fiche").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const body = new URLSearchParams({
-        title: document.getElementById("title").value,
-        content: document.getElementById("content").value,
+        titre: document.getElementById("titre").value,
+        contenu: document.getElementById("contenu").value,
         categorie: document.getElementById("categorie").value,
     });
 

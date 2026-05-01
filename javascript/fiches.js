@@ -15,7 +15,7 @@ fetch("/fiches/")
                 `;
             div.style.cursor = "pointer";
             div.addEventListener("click", () => {
-                window.location.href = `/fiche_display.html?id=${fiche.id_fiche}`;
+                window.location.href = `/html/fiche_display.html?id=${fiche.id_fiche}`;
             });
             section.appendChild(div);
         });

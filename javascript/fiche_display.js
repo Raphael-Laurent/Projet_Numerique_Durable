@@ -13,7 +13,7 @@ if (!id) {
             const btnModifier = document.createElement("button");
             btnModifier.textContent = "Modifier";
             btnModifier.addEventListener("click", () => {
-                window.location.href = `/modifierfiche.html?id=${id}`;
+                window.location.href = `/html/modifierfiche.html?id=${id}`;
             });
             document.querySelector("main").prepend(btnModifier);
 
@@ -23,7 +23,7 @@ if (!id) {
                 if (confirm("Êtes-vous sûr de vouloir supprimer cette fiche ?")) {
                     fetch(`/fiches/${id}`, { method: "DELETE" })
                         .then(res => {
-                            if (res.ok) window.location.href = "/fiches.html";
+                            if (res.ok) window.location.href = "/html/fiches.html";
                         })
                         .catch(err => console.error("Erreur :", err));
                 }

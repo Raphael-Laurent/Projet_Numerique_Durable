@@ -2,23 +2,39 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Compte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon compte</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/javascript/authGuard.js" defer></script>
 </head>
 <body>
 
-    <h1>Mon Compte</h1>
+    <header>
+        <nav>
+            <a href="/html/accueil.html">Accueil</a>
+            <a href="/html/fiches.html">Mes fiches</a>
+            <a href="/html/account.html">Profil</a>
+            <button id="logoutBtn">Se déconnecter</button>
+        </nav>
+    </header>
 
     <main>
+        <h1>Mon compte</h1>
 
         <section id="account_info">
-            Nom : ...
-            ...
+            <h2>Informations du compte</h2>
+            <p>Numéro étudiant : <span id="numEtudiant">Chargement...</span></p>
+            <p>Rôle : <span id="roleUtilisateur">Chargement...</span></p>
         </section>
-        
+
         <section id="account_param">
-            Mode nuit : oui/non 
-            ...
+            <h2>Paramètres</h2>
+            <p>Mode nuit : non</p>
         </section>
     </main>
 
+    <script src="/javascript/account.js" defer></script>
+    <script src="/javascript/logout.js" defer></script>
+
 </body>
+</html>

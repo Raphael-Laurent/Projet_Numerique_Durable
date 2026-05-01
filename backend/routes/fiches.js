@@ -35,6 +35,8 @@ router.post("/create", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+    const id_utilisateur = req.session?.utilisateur?.identifiant;
+    if (!id_utilisateur) return res.status(401).json({ message: "Non connecté." });
     const id_fiche = req.params.id;
     try {
         const fiche = await getFicheById(id_fiche);
@@ -47,14 +49,18 @@ router.get("/:id", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+    const id_utilisateur = req.session?.utilisateur?.identifiant;
+    if (!id_utilisateur) return res.status(401).json({ message: "Non connecté." });
+    
     const id_fiche = req.params.id;
     const { titre, contenu, categorie } = req.body;
-
     if (!titre || !contenu) {
         return res.status(400).send("Champs manquants");
     }
-
     try {
+        const fiche = await getFicheById(id_fiche);
+        if (!fiche) return res.status(404).send("Fiche introuvable");
+        if (fiche.id_utilisateur !== id_utilisateur) return res.status(403).json({ message: "Accès refusé." });
         await modifierFiche(id_fiche, titre, contenu, categorie);
         res.redirect(`/fiche_display.html?id=${id_fiche}`);
     } catch (err) {
@@ -64,8 +70,14 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
+    const id_utilisateur = req.session?.utilisateur?.identifiant;
+    if (!id_utilisateur) return res.status(401).json({ message: "Non connecté." });
+
     const id_fiche = req.params.id;
     try {
+        const fiche = await getFicheById(id_fiche);
+        if (!fiche) return res.status(404).send("Fiche introuvable");
+        if (fiche.id_utilisateur !== id_utilisateur) return res.status(403).json({ message: "Accès refusé." });
         await supprimerFiche(id_fiche);
         res.sendStatus(200);
     } catch (err) {

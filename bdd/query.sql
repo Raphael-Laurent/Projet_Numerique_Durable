@@ -15,5 +15,3 @@ CREATE TABLE IF NOT EXISTS fiches (
 
 SELECT * FROM utilisateurs;
 SELECT * FROM fiches;
-
-UPDATE utilisateurs SET admin = 1 WHERE identifiant = 'admin';

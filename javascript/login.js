@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", async (event) => {
             return;
         }
 
-        window.location.href = "/html/account.html";
+        window.location.href = "/account.html";
 
     } catch (error) {
         errorMessage.textContent = "Impossible de contacter le serveur.";

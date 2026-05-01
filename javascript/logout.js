@@ -8,7 +8,7 @@ if (logoutBtn) {
                 credentials: "include"
             });
 
-            window.location.href = "/html/login.html";
+            window.location.href = "/login.html";
 
         } catch (error) {
             alert("Erreur lors de la déconnexion.");

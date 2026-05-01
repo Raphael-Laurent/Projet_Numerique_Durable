@@ -6,7 +6,7 @@ async function verifierConnexion() {
         });
 
         if (!response.ok) {
-            window.location.href = "/html/login.html";
+            window.location.href = "/login.html";
             return;
         }
 
@@ -14,7 +14,7 @@ async function verifierConnexion() {
         window.utilisateurConnecte = data.utilisateur;
 
     } catch (error) {
-        window.location.href = "/html/login.html";
+        window.location.href = "/login.html";
     }
 }
 

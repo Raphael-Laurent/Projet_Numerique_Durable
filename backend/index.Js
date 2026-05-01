@@ -27,9 +27,9 @@ app.use(session({
     }
 }));
 
-app.use("/html", express.static(path.join(__dirname, "../html"), { etag: false, maxAge: 0 }));
-app.use("/css", express.static(path.join(__dirname, "../css"), { etag: false, maxAge: 0 }));
-app.use("/javascript", express.static(path.join(__dirname, "../javascript"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../html"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../css"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../javascript"), { etag: false, maxAge: 0 }));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../html/accueil.html"));

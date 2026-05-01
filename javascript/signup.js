@@ -29,7 +29,7 @@ signupForm.addEventListener("submit", async (event) => {
             return;
         }
 
-        window.location.href = "/html/login.html";
+        window.location.href = "/login.html";
 
     } catch (error) {
         message.textContent = "Impossible de contacter le serveur.";

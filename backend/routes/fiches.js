@@ -27,7 +27,7 @@ router.post("/create", async (req, res) => {
 
     try {
         await creerFiche(id_utilisateur, titre, contenu, categorie);
-        res.redirect("/html/fiches.html");
+        res.redirect("/fiches.html");
     } catch (err) {
         console.error(err);
         res.status(500).send("Erreur BDD");
@@ -56,7 +56,7 @@ router.put("/:id", async (req, res) => {
 
     try {
         await modifierFiche(id_fiche, titre, contenu, categorie);
-        res.redirect(`/html/fiche_display.html?id=${id_fiche}`);
+        res.redirect(`/fiche_display.html?id=${id_fiche}`);
     } catch (err) {
         console.error(err);
         res.status(500).send("Erreur BDD");

@@ -6,7 +6,7 @@ async function afficherCompte() {
         });
 
         if (!response.ok) {
-            window.location.href = "/html/login.html";
+            window.location.href = "/login.html";
             return;
         }
 
@@ -16,7 +16,7 @@ async function afficherCompte() {
         document.getElementById("roleUtilisateur").textContent = data.utilisateur.admin ? "Administrateur" : "Utilisateur";
 
     } catch (error) {
-        window.location.href = "/html/login.html";
+        window.location.href = "/login.html";
     }
 }
 

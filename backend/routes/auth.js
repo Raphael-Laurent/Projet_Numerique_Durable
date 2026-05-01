@@ -5,21 +5,21 @@ import db from "../database.js";
 const router = express.Router();
 
 router.post("/login", (req, res) => {
-    const { num_etudiant, mdp } = req.body;
+    const { identifiant, mdp } = req.body;
 
-    if (!num_etudiant || !mdp) {
+    if (!identifiant || !mdp) {
         return res.status(400).json({
             message: "Numéro étudiant et mot de passe obligatoire."
         });
     }
 
     const sql = `
-        SELECT num_etudiant, mdp, admin
+        SELECT identifiant, mdp, admin
         FROM utilisateurs
-        WHERE num_etudiant = ?
+        WHERE identifiant = ?
     `;
 
-    db.get(sql, [num_etudiant], async (err, utilisateur) => {
+    db.get(sql, [identifiant], async (err, utilisateur) => {
         if (err) {
             console.error("Erreur login :", err.message);
             return res.status(500).json({
@@ -33,8 +33,7 @@ router.post("/login", (req, res) => {
             });
         }
 
-        const mdpValide = await bcrypt.compare(mdp, utilisateur.mdp);
-
+        const mdpValide = await bcrypt.compare(mdp, utilisateur.mdp);      
         if (!mdpValide) {
             return res.status(401).json({
                 message: "Identifiants incorrects."
@@ -42,7 +41,7 @@ router.post("/login", (req, res) => {
         }
 
         req.session.utilisateur = {
-            num_etudiant: utilisateur.num_etudiant,
+            identifiant: utilisateur.identifiant,
             admin: Boolean(utilisateur.admin)
         };
 

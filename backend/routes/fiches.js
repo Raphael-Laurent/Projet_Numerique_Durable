@@ -5,7 +5,7 @@ import { creerFiche, getFichesUtilisateur, getFicheById, modifierFiche, supprime
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    const id_utilisateur = req.session?.utilisateur?.num_etudiant;
+    const id_utilisateur = req.session?.utilisateur?.identifiant;
     if (!id_utilisateur) return res.status(401).json({ message: "Non connecté." });
     try {
         const fiches = await getFichesUtilisateur(id_utilisateur);
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/create", async (req, res) => {
-    const id_utilisateur = req.session?.utilisateur?.num_etudiant;
+    const id_utilisateur = req.session?.utilisateur?.identifiant;
     if (!id_utilisateur) return res.status(401).json({ message: "Non connecté." });
     const { titre, contenu, categorie } = req.body;
 

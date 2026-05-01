@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes fiches</title>
+    <title>Modifier le compte</title>
     <link rel="stylesheet" href="/style.css">
     <script src="/authGuard.js" defer></script>
-    <script src="/fiches.js" defer></script>
+    <script src="/modifiercompte.js" defer></script>
 </head>
 <body>
-
     <header>
         <nav>
             <a href="/accueil.html">Accueil</a>
             <a href="/fiches.html">Mes fiches</a>
-            <a href="/account.html">Profil</a>
+            <a href="/account.html">Compte</a>
             <a href="/admin.html" id="adminLink" style="display:none">Administration</a>
             <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
-
     <main>
-        <h1>Mes fiches</h1>
-
-        <section id="create_box">
-            <a href="/creerfiches.html">Créer une fiche</a>
+        <h1>Modifier le compte</h1>
+        <section>
+            <form id="modifier_compte">
+                <label for="mdp">Nouveau mot de passe :</label>
+                <input type="password" id="mdp" name="mdp" required>
+                <label for="mdp_confirm">Confirmer le mot de passe :</label>
+                <input type="password" id="mdp_confirm" name="mdp_confirm" required>
+                <button type="submit">Enregistrer</button>
+            </form>
         </section>
-
-        <section id="fiches"></section>
     </main>
-
     <script src="/logout.js" defer></script>
-
 </body>
 </html>

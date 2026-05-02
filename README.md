@@ -1,33 +1,60 @@
-# Projet_Numerique_Durable
+# FicheStudy — Plateforme de fiches de révision
 
-Chaque branches est associée à une fonctionnalité :
+FicheStudy est une plateforme web permettant aux étudiants ou autres de créer, consulter et réviser des fiches de cours. L'application a été conçue lors d'un projet d'éco-conception web.
 
-- squelette : modifier le html du projet 
-- css : le css du projet 
-- base_donnee : mettre en place et modifier la base de donnée sqlite 
-- singup : back-end pour créer un compte + front-end pour l'interface
-- login/logout : back-end pour s'enregistrer ou quitter + front-end pour l'interace
-- creation_fiches : back-end de création des fiches + front-end pour les inputs utilisateurs
-- consultation_fiches : afficher la fiche (implémenter le trucs où on cache la fiche et où on peut la révéler petit à petit)
+## Site déployé
 
-Le back-end en Node.js, la base de donnée en sqlite.
+[URL à compléter après déploiement]
 
-## Package backend à installer (node.js installé requis) :
-sqlite 3 :
-```
-cd backend
-npm install sqlite3
-npm install express
-```
+## Équipe
 
-## A mettre dans gitignore :
-```
-backend/node_modules/
-``` 
+- Armand Labernardière
+- Raphaël Laurent
+- Noémie Niang
+- Kevin Ojoduma-Quere
+- Elias Moussa
+
+## Stack technique
+
+| Technologie | Rôle | Justification Green IT |
+|---|---|---|
+| HTML, CSS, JavaScript | Front-end | Technologies natives, aucun framework lourd, poids minimal |
+| Node.js + Express | Back-end | Runtime léger, dépendances minimales |
+| SQLite | Base de données | Pas de serveur dédié, embarqué dans le projet |
+
+## Lancer le projet en local
+
+Pour utiliser la base de donnée locale, changer dans database.js :
+```const db = new sqlite.Database("../database.sqlite",... ```
+Par ```const db = new sqlite.Database("../bdd/database.sqlite",... ```
 
 
-## Pour run le serveur node :
-```
-cd backend
+
+**Prérequis** : Node.js installé
+
+```bash
+git clone https://github.com/votre-repo/Projet_Numerique_Durable.git
+cd Projet_Numerique_Durable/backend
+npm install
 npm start
 ```
+
+Puis ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+
+**Compte admin par défaut** :
+- Identifiant : `admin`
+- Mot de passe : `admin123`
+
+## 📁 Structure du dépôt
+├── backend/          # Serveur Node.js + Express
+│   ├── models/       # Accès base de données
+│   ├── routes/       # Routes API
+│   ├── middleware/   # Middlewares auth
+│   ├── database.js   # Connexion et initialisation BDD
+│   └── index.js      # Point d'entrée serveur
+├── bdd/              # Dossier base de données (local uniquement)
+├── css/              # Feuilles de style
+├── html/             # Pages HTML
+├── javascript/       # Scripts front-end
+└── docs/             # Rapport PDF 
+

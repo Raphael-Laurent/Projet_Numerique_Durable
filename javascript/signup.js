@@ -6,7 +6,7 @@ signupForm.addEventListener("submit", async (event) => {
 
     message.textContent = "";
 
-    const num_etudiant = document.getElementById("num_etudiant").value.trim();
+    const identifiant = document.getElementById("identifiant").value.trim();
     const mdp = document.getElementById("mdp").value;
 
     try {
@@ -16,7 +16,7 @@ signupForm.addEventListener("submit", async (event) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                num_etudiant: num_etudiant,
+                identifiant: identifiant,
                 mdp: mdp,
                 admin: 0
             })

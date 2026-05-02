@@ -9,24 +9,27 @@
 <body>
 
     <main>
-        <h1>Connexion</h1>
+        <section id="login-section">
 
-        <p id="errorMessage"></p>
+            <h1>Connexion</h1>
+            
+            <p id="errorMessage"></p>
 
-        <form id="loginForm">
-            <label for="num_etudiant">Numéro étudiant</label>
-            <input type="text" id="num_etudiant" name="num_etudiant" required>
+            <form id="loginForm">
+                <label for="identifiant">Numéro étudiant</label>
+                <input type="text" id="identifiant" name="identifiant" required>
 
-            <label for="mdp">Mot de passe</label>
-            <input type="password" id="mdp" name="mdp" required>
+                <label for="mdp">Mot de passe</label>
+                <input type="password" id="mdp" name="mdp" required>
 
-            <button type="submit">Se connecter</button>
-        </form>
+                <button type="submit">Se connecter</button>
+            </form>
 
-        <p>
-            Pas encore de compte ?
-            <a href="/signup.html">Créer un compte</a>
-        </p>
+            <p>
+                Pas encore de compte ?
+                <a href="/signup.html">Créer un compte</a>
+            </p>
+        </section>
     </main>
 
 </body>

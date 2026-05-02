@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Gestion de fiches de révision</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="/authGuard.js" defer></script>
+    <script src="/logout.js" defer></script>
 </head>
 <body>
 
@@ -13,12 +15,10 @@
             <div class="nav-left">
                 <a href="/accueil.html">Accueil</a>
             </div>
-
-            <div class="nav-right">
-                <a href="/fiches.html">Mes fiches</a>
-                <a href="/account.html">Mon profil</a>
-                <a href="/login.html">Connexion</a>
-            </div>
+            <a href="/fiches.html">Mes fiches</a>
+            <a href="/account.html">Profil</a>
+            <a href="/admin.html" id="adminLink" style="display:none">Administration</a>
+            <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
 

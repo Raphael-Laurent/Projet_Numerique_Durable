@@ -6,7 +6,7 @@ loginForm.addEventListener("submit", async (event) => {
 
     errorMessage.textContent = "";
 
-    const num_etudiant = document.getElementById("num_etudiant").value.trim();
+    const identifiant = document.getElementById("identifiant").value.trim();
     const mdp = document.getElementById("mdp").value;
 
     try {
@@ -17,7 +17,7 @@ loginForm.addEventListener("submit", async (event) => {
             },
             credentials: "include",
             body: JSON.stringify({
-                num_etudiant: num_etudiant,
+                identifiant: identifiant,
                 mdp: mdp
             })
         });
@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", async (event) => {
             return;
         }
 
-        window.location.href = "/account.html";
+        window.location.href = "/accueil.html";
 
     } catch (error) {
         errorMessage.textContent = "Impossible de contacter le serveur.";

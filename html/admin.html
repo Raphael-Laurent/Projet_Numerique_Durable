@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes fiches</title>
+    <title>Administration</title>
     <link rel="stylesheet" href="/style.css">
     <script src="/authGuard.js" defer></script>
-    <script src="/fiches.js" defer></script>
+    <script src="/admin.js" defer></script>
 </head>
 <body>
-
     <header>
         <nav>
             <a href="/accueil.html">Accueil</a>
@@ -19,18 +18,23 @@
             <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
-
     <main>
-        <h1>Mes fiches</h1>
-
-        <section id="create_box">
-            <a href="/creerfiches.html">Créer une fiche</a>
+        <h1>Administration</h1>
+        <section id="liste_utilisateurs">
+            <h2>Utilisateurs</h2>
+            <table id="tableUsers">
+                <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableUtilisateurs">
+                </tbody>
+            </table>
         </section>
-
-        <section id="fiches"></section>
     </main>
-
     <script src="/logout.js" defer></script>
-
 </body>
 </html>

@@ -14,6 +14,7 @@
             <a href="/accueil.html">Accueil</a>
             <a href="/fiches.html">Mes fiches</a>
             <a href="/account.html">Profil</a>
+            <a href="/admin.html" id="adminLink" style="display:none">Administration</a>
             <button id="logoutBtn">Se déconnecter</button>
         </nav>
     </header>
@@ -23,13 +24,20 @@
 
         <section id="account_info">
             <h2>Informations du compte</h2>
-            <p>Numéro étudiant : <span id="numEtudiant">Chargement...</span></p>
+            <p>Identifiant : <span id="identifiant">Chargement...</span></p>
             <p>Rôle : <span id="roleUtilisateur">Chargement...</span></p>
         </section>
 
         <section id="account_param">
             <h2>Paramètres</h2>
             <p>Mode nuit : non</p>
+        </section>
+
+        <section id="account_modify">
+            <h2>Modifier mon mot de passe</h2>
+            <button id="modifyAccountBtn">Modifier mon mot de passe</button>
+            <h2>Supprimer mon compte</h2>
+            <button id="deleteAccountBtn">Supprimer mon compte</button>
         </section>
     </main>
 

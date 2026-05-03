@@ -27,12 +27,12 @@ app.use(session({
     }
 }));
 
-app.use(express.static(path.join(__dirname, "../html"), { etag: false, maxAge: 0 }));
-app.use(express.static(path.join(__dirname, "../css"), { etag: false, maxAge: 0 }));
-app.use(express.static(path.join(__dirname, "../javascript"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../frontend/html"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../frontend/css"), { etag: false, maxAge: 0 }));
+app.use(express.static(path.join(__dirname, "../frontend/javascript"), { etag: false, maxAge: 0 }));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../html/accueil.html"));
+    res.sendFile(path.join(__dirname, "../frontend/html/accueil.html"));
 });
 
 app.use("/api/auth", authRoutes);

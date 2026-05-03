@@ -8,11 +8,11 @@ FicheStudy est une plateforme web permettant aux étudiants ou autres de créer,
 
 ## Équipe
 
-- Armand Labernardière
-- Raphaël Laurent
-- Noémie Niang
-- Kevin Ojoduma-Quere
-- Elias Moussa
+- Armand Labernardière : diagrammes UML, cas d'utilisation, mesures et Optimisation Green IT
+- Raphaël Laurent : back-end fiches, admin et Optimisation Green IT
+- Noémie Niang : back-end utilisateurs, authentification (login/logout) et admin
+- Kevin Ojoduma-Quere : diagrammes UML, wireframes, mesures et déploiements
+- Elias Moussa : CSS, design de l'interface et déploiement
 
 ## Stack technique
 
@@ -21,6 +21,21 @@ FicheStudy est une plateforme web permettant aux étudiants ou autres de créer,
 | HTML, CSS, JavaScript | Front-end | Technologies natives, aucun framework lourd, poids minimal |
 | Node.js + Express | Back-end | Runtime léger, dépendances minimales |
 | SQLite | Base de données | Pas de serveur dédié, embarqué dans le projet |
+
+## Lancer en local
+
+**Prérequis** : Node.js installé
+
+```bash
+git clone https://github.com/Raphael-Laurent/Projet_Numerique_Durable.git
+cd Projet_Numerique_Durable/backend
+npm install
+npm start
+```
+
+## Rapport
+
+[Rapport PDF](./docs/rapport.pdf)
 
 ## Utiliser un compte admin
 
@@ -41,3 +56,6 @@ FicheStudy est une plateforme web permettant aux étudiants ou autres de créer,
 ├── javascript/       # Scripts front-end \
 └── docs/             # Rapport PDF  \
 
+## Conventions de commit
+
+Chaque fonctionnalité a été développée dans une branche dédiée puis fusionnée dans `main` via une Pull Request.

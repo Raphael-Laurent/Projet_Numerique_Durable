@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page profil de l'utilisateur. Consultez vos informations, modifiez votre mot de passe ou supprimez votre compte.">
     <title>Mon compte</title>
     <link rel="stylesheet" href="/style.css">
     <script src="/authGuard.js" defer></script>
@@ -13,7 +14,9 @@
         <nav>
             <a href="/accueil.html">Accueil</a>
             <a href="/fiches.html">Mes fiches</a>
-            <a href="/account.html">Profil</a>
+            <div class="nav-left">
+                <a href="/account.html">Profil</a>
+            </div>
             <a href="/admin.html" id="adminLink" style="display:none">Administration</a>
             <button id="logoutBtn">Se déconnecter</button>
         </nav>
@@ -39,6 +42,10 @@
             <h2>Supprimer mon compte</h2>
             <button id="deleteAccountBtn">Supprimer mon compte</button>
         </section>
+
+        <footer>
+            <p>FicheStudy — Plateforme de révision</p>
+        </footer>
     </main>
 
     <script src="/account.js" defer></script>

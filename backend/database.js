@@ -14,7 +14,6 @@ const db = new sqlite.Database("../database.sqlite", sqlite3.OPEN_READWRITE | sq
                 mdp TEXT NOT NULL,
                 admin BOOLEAN NOT NULL DEFAULT 0
             )`);
-
             db.run(`CREATE TABLE IF NOT EXISTS fiches (
                 id_fiche INTEGER PRIMARY KEY AUTOINCREMENT,
                 id_utilisateur TEXT,
@@ -23,7 +22,7 @@ const db = new sqlite.Database("../database.sqlite", sqlite3.OPEN_READWRITE | sq
                 categorie TEXT,
                 FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(identifiant)
             )`);
-
+            db.run(`CREATE INDEX IF NOT EXISTS idx_fiches_utilisateur ON fiches(id_utilisateur)`);
             const mdpHash = await bcrypt.hash("admin123", 10);
             db.run(`INSERT OR IGNORE INTO utilisateurs (identifiant, mdp, admin) VALUES (?, ?, 1)`,
                 ["admin", mdpHash]

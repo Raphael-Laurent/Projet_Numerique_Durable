@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultez vos fiches. Vous pouvez en créer une nouvelle en appuyant sur le bouton 'Créer une fiche'. Cliquez sur une fiche pour la consulter.">
     <title>Mes fiches</title>
     <link rel="stylesheet" href="/style.css">
     <!-- <script src="/authGuard.js" defer></script> -->
@@ -13,7 +14,9 @@
     <header>
         <nav>
             <a href="/accueil.html">Accueil</a>
-            <a href="/fiches.html">Mes fiches</a>
+            <div class="nav-left">
+                <a href="/fiches.html">Mes fiches</a>
+            </div>
             <a href="/account.html">Profil</a>
             <a href="/admin.html" id="adminLink" style="display:none">Administration</a>
             <button id="logoutBtn">Se déconnecter</button>
@@ -32,5 +35,8 @@
 
     <script src="/logout.js" defer></script>
 
+    <footer>
+            <p>FicheStudy — Plateforme de révision</p>
+    </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@ FicheStudy est une plateforme web permettant aux étudiants ou autres de créer,
 
 ## Site déployé
 
-[URL à compléter après déploiement]
+https://fichesstudy.onrender.com
 
 ## Équipe
 
@@ -32,6 +32,8 @@ cd Projet_Numerique_Durable/backend
 npm install
 npm start
 ```
+
+L'initialisation complète de la base de donnée est gérée automatiquement par database.js.
 
 ## Rapport
 

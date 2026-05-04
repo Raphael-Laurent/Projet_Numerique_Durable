@@ -61,3 +61,6 @@ Chaque fonctionnalité a été développée dans une branche dédiée puis fusio
 ## Rapport
 
 [Rapport PDF](./docs/rapport_projet_numerique_durable_GROUPE3)
+
+## Dépôt GitHub
+[https://github.com/Raphael-Laurent/Projet_Numerique_Durable](https://github.com/Raphael-Laurent/Projet_Numerique_Durable)

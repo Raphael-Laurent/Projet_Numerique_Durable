@@ -35,10 +35,6 @@ npm start
 
 L'initialisation complète de la base de donnée est gérée automatiquement par database.js.
 
-## Rapport
-
-[Rapport PDF](./docs/rapport.pdf)
-
 ## Utiliser un compte admin
 
 **Compte admin par défaut** :
@@ -61,3 +57,7 @@ L'initialisation complète de la base de donnée est gérée automatiquement par
 ## Conventions de commit
 
 Chaque fonctionnalité a été développée dans une branche dédiée puis fusionnée dans `main` via une Pull Request.
+
+## Rapport
+
+[Rapport PDF](./docs/rapport_projet_numerique_durable_GROUPE3)

@@ -8,11 +8,11 @@ https://fichesstudy.onrender.com
 
 ## Équipe
 
-- Armand Labernardière : diagrammes UML, cas d'utilisation, mesures et Optimisation Green IT
-- Raphaël Laurent : back-end fiches, admin et Optimisation Green IT
-- Noémie Niang : back-end utilisateurs, authentification (login/logout) et admin
-- Kevin Ojoduma-Quere : diagrammes UML, wireframes, mesures écologiques, correction de code et déploiements
-- Elias Moussa : CSS, design de l'interface et déploiement
+- Armand Labernardière : diagrammes UML, cas d'utilisation, mesures Green IT et Optimisation du site
+- Raphaël Laurent : back-end fiches, admin, CSS et Optimisation Green IT
+- Noémie Niang : back-end utilisateurs, authentification (login/logout), admin et mesures Green IT
+- Kevin Ojoduma-Quere : diagrammes UML, wireframes,correction de code et déploiements
+- Elias Moussa : CSS, design de l'interface, fiches et déploiement
 
 ## Stack technique
 

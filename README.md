@@ -11,7 +11,7 @@ https://fichesstudy.onrender.com
 - Armand Labernardière : diagrammes UML, cas d'utilisation, mesures et Optimisation Green IT
 - Raphaël Laurent : back-end fiches, admin et Optimisation Green IT
 - Noémie Niang : back-end utilisateurs, authentification (login/logout) et admin
-- Kevin Ojoduma-Quere : diagrammes UML, wireframes, mesures et déploiements
+- Kevin Ojoduma-Quere : diagrammes UML, wireframes, mesures écologiques, correction de code et déploiements
 - Elias Moussa : CSS, design de l'interface et déploiement
 
 ## Stack technique
@@ -52,10 +52,10 @@ L'initialisation complète de la base de donnée est gérée automatiquement par
 │   ├── middleware/   # Middlewares auth \
 │   ├── database.js   # Connexion et initialisation BDD \
 │   └── index.js      # Point d'entrée serveur \
-├── bdd/              # Dossier base de données (local uniquement) \
-├── css/              # Feuilles de style \
-├── html/             # Pages HTML \
-├── javascript/       # Scripts front-end \
+├── frontend /        # HTML, CSS et JavaScript
+    ├── css/              # Feuilles de style \
+    ├── html/             # Pages HTML \
+    ├── javascript/       # Scripts front-end \
 └── docs/             # Rapport PDF  \
 
 ## Conventions de commit
